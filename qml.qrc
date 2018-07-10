@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>EnumerationView.qml</file>
-        <file>Header.qml</file>
-        <file>PanelView.qml</file>
+        <file>default.json</file>
+        <file>DefaultTheme.qml</file>
     </qresource>
 </RCC>

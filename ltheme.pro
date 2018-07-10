@@ -12,6 +12,8 @@ TARGET  = dnaithemeplugin
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+RESOURCES = qml.qrc
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
@@ -25,6 +27,8 @@ pluginfiles.files += \
     Label.qml \
     AwesomeIcon.qml \
     Switch.qml \
+    DefaultTheme.qml \
+    InitTheme.qml \
     CheckBox.qml
 
 isEmpty(PROJECT_ROOT_DIRECTORY){
@@ -54,7 +58,9 @@ DISTFILES += \
     TextField.qml \
     Label.qml \
     AwesomeIcon.qml \
-    Switch.qml
+    Switch.qml \
+    DefaultTheme.qml \
+    InitTheme.qml
 
 HEADERS += \
     dnaitheme_plugin.h
