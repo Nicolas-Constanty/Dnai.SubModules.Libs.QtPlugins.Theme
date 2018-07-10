@@ -1,0 +1,14 @@
+module Dnai.Theme
+AwesomeIcon 1.0 AwesomeIcon.qml
+Button 1.0 Button.qml
+CheckBox 1.0 CheckBox.qml
+ComboBox 1.0 ComboBox.qml
+Label 1.0 Label.qml
+TextField 1.0 TextField.qml
+plugin dnaithemeplugin
+classname DnaiThemePlugin
+typeinfo plugins.qmltypes
+depends Dnai.FontAwesome 1.0
+depends Dnai.Controls 1.0
+depends Dnai.Settings 1.0
+designersupported
