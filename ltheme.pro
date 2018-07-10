@@ -24,6 +24,7 @@ pluginfiles.files += \
     TextField.qml \
     Label.qml \
     AwesomeIcon.qml \
+    Switch.qml \
     CheckBox.qml
 
 isEmpty(PROJECT_ROOT_DIRECTORY){
@@ -52,7 +53,8 @@ DISTFILES += \
     Button.qml \
     TextField.qml \
     Label.qml \
-    AwesomeIcon.qml
+    AwesomeIcon.qml \
+    Switch.qml
 
 HEADERS += \
     dnaitheme_plugin.h
