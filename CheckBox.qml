@@ -59,7 +59,6 @@ T.CheckBox {
         rightPadding: control.indicator && control.mirrored ? control.indicator.width + control.spacing : 0
 
         text: control.text
-//        font: control.font
         font.pointSize: AppSettings.theme.font.pointSize
         color: AppSettings.theme.text.color
     }
