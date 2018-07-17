@@ -59,8 +59,8 @@ T.Button {
             x: (!control.mirrored ? ico.text && control.text ? Math.max(_label.width + ico.width + control.leftPadding + control.rightPadding, !_label.text ? ico.width : control.implicitWidth - control.leftPadding - control.rightPadding) / 2 - (_label.width / 2 + control.leftPadding) + ico.width : control.width / 2 - (_label.width / 2 + control.leftPadding) : 0)
             id: _label
             text: control.text
-            color: control.checked || control.highlighted ? control.palette.brightText :
-                   control.flat && !control.down ? (control.visualFocus ? control.palette.highlight : control.palette.windowText) : AppSettings.theme.text.color
+            color: control.enabled ? (control.checked || control.highlighted ? control.palette.brightText :
+                   control.flat && !control.down ? (control.visualFocus ? control.palette.highlight : control.palette.windowText) : AppSettings.theme.text.color) : AppSettings.theme.text.disableColor
             y: control.height / 2 - height / 2 - control.baselineOffset
         }
         onHeightChanged: {
