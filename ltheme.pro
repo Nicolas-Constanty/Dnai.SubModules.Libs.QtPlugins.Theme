@@ -31,7 +31,8 @@ pluginfiles.files += \
     Switch.qml \
     DefaultTheme.qml \
     InitTheme.qml \
-    CheckBox.qml
+    CheckBox.qml \
+    TabBar.qml
 
 isEmpty(PROJECT_ROOT_DIRECTORY){
   PROJECT_ROOT_DIRECTORY = $$[QT_INSTALL_QML]
@@ -62,7 +63,8 @@ DISTFILES += \
     AwesomeIcon.qml \
     Switch.qml \
     DefaultTheme.qml \
-    InitTheme.qml
+    InitTheme.qml \
+    TabBar.qml
 
 HEADERS += \
     dnaitheme_plugin.h

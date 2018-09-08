@@ -14,7 +14,9 @@ T.TextField {
     property string deselectColorBackground: AppSettings.theme["editableText"]["color"]["background"]["deselect"]
     property string errorText: ""
     property bool enableBar: true
+    property bool canEdit: true
 
+    readOnly: !canEdit
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                             placeholderText ? placeholder.implicitWidth + leftPadding + rightPadding : 0)
                             || contentWidth + leftPadding + rightPadding
