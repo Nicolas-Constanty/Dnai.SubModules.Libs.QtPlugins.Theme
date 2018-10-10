@@ -34,40 +34,44 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
-import QtQuick.Templates 2.3 as T
+import QtQuick 2.11
+import QtQuick.Controls 2.4
+import QtQuick.Controls.impl 2.4
+import QtQuick.Templates 2.4 as T
 
-T.TabBar {
+import Dnai.Settings 1.0
+
+T.TabButton {
     id: control
 
-    property alias orientation: _listView.orientation
-
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
-                            contentWidth + leftPadding + rightPadding)
+                            contentItem.implicitWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(background ? background.implicitHeight : 0,
-                             contentHeight + topPadding + bottomPadding)
+                             contentItem.implicitHeight + topPadding + bottomPadding)
+    baselineOffset: contentItem.y + contentItem.baselineOffset
 
-    spacing: 1
-    width: parent.width
-    height: orientation == ListView.Horizontal ? 60 : parent.height
+    padding: 6
+    spacing: 6
 
-    contentItem: ListView {
-        id: _listView
-        model: control.contentModel
-        currentIndex: control.currentIndex
+    icon.width: 24
+    icon.height: 24
+    icon.color: checked ? control.palette.windowText : control.palette.brightText
+
+    contentItem: IconLabel {
         spacing: control.spacing
-        orientation: ListView.Horizontal
-        boundsBehavior: Flickable.StopAtBounds
-        flickableDirection: Flickable.AutoFlickIfNeeded
-        snapMode: ListView.SnapToItem
+        mirrored: control.mirrored
+        display: control.display
 
-        highlightMoveDuration: 0
-        highlightRangeMode: ListView.ApplyRange
-        preferredHighlightBegin: 40
-        preferredHighlightEnd: width - 40
+        icon: control.icon
+        text: control.text
+        font: control.font
+        color: AppSettings.theme.text.color
     }
+    font.pointSize: 14
 
     background: Rectangle {
-        color: "transparent"
+        implicitHeight: 60
+        color: Color.blend(control.checked ? AppSettings.theme.colors.background.color1 : control.hovered ? AppSettings.theme.colors.background.color3 : AppSettings.theme.colors.background.color2,
+                                             AppSettings.theme.colors.background.base, control.down ? 0.5 : 0.0)
     }
 }

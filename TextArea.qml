@@ -34,40 +34,51 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
-import QtQuick.Templates 2.3 as T
+import QtQuick 2.11
+import QtQuick.Controls 2.4
+import QtQuick.Controls.impl 2.4
+import QtQuick.Templates 2.4 as T
 
-T.TabBar {
+import Dnai.Settings 1.0
+
+T.TextArea {
     id: control
 
-    property alias orientation: _listView.orientation
+    implicitWidth: Math.max(contentWidth + leftPadding + rightPadding,
+                            background ? background.implicitWidth : 0,
+                            placeholder.implicitWidth + leftPadding + rightPadding)
+    implicitHeight: Math.max(contentHeight + topPadding + bottomPadding,
+                             background ? background.implicitHeight : 0,
+                             placeholder.implicitHeight + topPadding + bottomPadding)
 
-    implicitWidth: Math.max(background ? background.implicitWidth : 0,
-                            contentWidth + leftPadding + rightPadding)
-    implicitHeight: Math.max(background ? background.implicitHeight : 0,
-                             contentHeight + topPadding + bottomPadding)
+    padding: 6
+    leftPadding: padding + 4
 
-    spacing: 1
-    width: parent.width
-    height: orientation == ListView.Horizontal ? 60 : parent.height
-
-    contentItem: ListView {
-        id: _listView
-        model: control.contentModel
-        currentIndex: control.currentIndex
-        spacing: control.spacing
-        orientation: ListView.Horizontal
-        boundsBehavior: Flickable.StopAtBounds
-        flickableDirection: Flickable.AutoFlickIfNeeded
-        snapMode: ListView.SnapToItem
-
-        highlightMoveDuration: 0
-        highlightRangeMode: ListView.ApplyRange
-        preferredHighlightBegin: 40
-        preferredHighlightEnd: width - 40
-    }
+    color: AppSettings.theme.text.color
+    selectionColor: control.palette.highlight
+    selectedTextColor: control.palette.highlightedText
+    wrapMode: TextEdit.WordWrap
 
     background: Rectangle {
-        color: "transparent"
+        color: AppSettings.theme.colors.background.color2
+        border.width: 1
+        border.color: AppSettings.theme.colors.background.color3
+    }
+
+    PlaceholderText {
+        id: placeholder
+        x: control.leftPadding
+        y: control.topPadding
+        width: control.width - (control.leftPadding + control.rightPadding)
+        height: control.height - (control.topPadding + control.bottomPadding)
+
+        text: control.placeholderText
+        font: control.font
+        opacity: 0.5
+        color: control.color
+        verticalAlignment: control.verticalAlignment
+        visible: !control.length && !control.preeditText && (!control.activeFocus || control.horizontalAlignment !== Qt.AlignHCenter)
+        elide: Text.ElideRight
+        renderType: control.renderType
     }
 }

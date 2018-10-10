@@ -78,7 +78,7 @@ T.Button {
         implicitHeight: 26
         radius: 2
         visible: !control.flat || control.down || control.checked || control.highlighted
-        color: Color.blend(control.checked || control.highlighted ? AppSettings.theme.colors.background.dark : AppSettings.theme.colors.background.base,
+        color: Color.blend(control.checked || control.highlighted ? AppSettings.theme.colors.background.dark : control.hovered ? AppSettings.theme.colors.background.light : AppSettings.theme.colors.background.base,
                                                                     AppSettings.theme.colors.background.light, control.down ? 0.5 : 0.0)
         border.color: AppSettings.theme.border.color
         border.width: control.visualFocus ? 2 : 1

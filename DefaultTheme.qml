@@ -14,6 +14,7 @@ Item {
     }
 
     Component.onCompleted: {
+        console.log("HELLO FROM DLL")
         AppSettings.parameters = _settingsParameters
         //Load theme 1
         AppSettings.currentTheme = AppSettings.themeNames[0]

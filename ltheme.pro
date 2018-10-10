@@ -5,9 +5,9 @@ QT += quick
 CONFIG += c++11
 
 TARGET  = dnaithemeplugin
-CONFIG(release, debug|release) {
-DEFINES += QT_NO_DEBUG_OUTPUT
-}
+#CONFIG(release, debug|release) {
+#DEFINES += QT_NO_DEBUG_OUTPUT
+#}
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -32,7 +32,9 @@ pluginfiles.files += \
     DefaultTheme.qml \
     InitTheme.qml \
     CheckBox.qml \
-    TabBar.qml
+    TabBar.qml \
+    TabButton.qml \
+    TextArea.qml
 
 isEmpty(PROJECT_ROOT_DIRECTORY){
   PROJECT_ROOT_DIRECTORY = $$[QT_INSTALL_QML]
@@ -64,7 +66,9 @@ DISTFILES += \
     Switch.qml \
     DefaultTheme.qml \
     InitTheme.qml \
-    TabBar.qml
+    TabBar.qml \
+    TabButton.qml \
+    TextArea.qml
 
 HEADERS += \
     dnaitheme_plugin.h
