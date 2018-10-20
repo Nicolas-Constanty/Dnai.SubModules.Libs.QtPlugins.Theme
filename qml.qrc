@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>default.json</file>
-        <file>DefaultTheme.qml</file>
     </qresource>
 </RCC>

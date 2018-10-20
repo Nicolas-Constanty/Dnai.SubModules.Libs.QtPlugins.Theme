@@ -1,0 +1,16 @@
+
+release/
+
+debug/
+
+*.Release
+
+*.vcxproj
+
+*.filters
+
+*.user
+
+*.ltheme
+
+*.Debug
