@@ -29,8 +29,6 @@ pluginfiles.files += \
     Label.qml \
     AwesomeIcon.qml \
     Switch.qml \
-    DefaultTheme.qml \
-    InitTheme.qml \
     CheckBox.qml \
     TabBar.qml \
     TabButton.qml \
@@ -64,8 +62,6 @@ DISTFILES += \
     Label.qml \
     AwesomeIcon.qml \
     Switch.qml \
-    DefaultTheme.qml \
-    InitTheme.qml \
     TabBar.qml \
     TabButton.qml \
     TextArea.qml

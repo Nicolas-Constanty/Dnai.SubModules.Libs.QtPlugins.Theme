@@ -1,10 +1,8 @@
 module Dnai.Theme
-singleton DefaultTheme 1.0 DefaultTheme.qml
 AwesomeIcon 1.0 AwesomeIcon.qml
 Button 1.0 Button.qml
 CheckBox 1.0 CheckBox.qml
 ComboBox 1.0 ComboBox.qml
-InitDefaultTheme 1.0 InitTheme.qml
 Label 1.0 Label.qml
 Switch 1.0 Switch.qml
 TabBar 1.0 TabBar.qml
